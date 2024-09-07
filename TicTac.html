@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+        }
+        nav{
+            background-color: rgb(111, 115, 121);
+            color: white;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            padding-left: 13px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            background: linear-gradient(135deg,red,green,yellow,blue);
+            height: calc(100% - 85px);
+        }
+        .gamepart{
+            display: grid;
+            grid-template-columns: repeat(3,9vw);
+            grid-template-rows: repeat(3,9vw);
+        }
+        .box{
+            border: 1px black solid;
+            cursor: pointer;
+        }
+        .box:hover{
+            background-color: rgba(184, 15, 34, 0.137);
+        }
+        .bu{
+            border-top: 0;
+        }
+        .bl{
+            border-left: 0;
+        }
+        .br{
+            border-right: 0;
+        }
+        .bd{
+            border-bottom: 0;
+        }
+        .boxpart{
+            font-size: 7vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 10px rgb(144, 148, 149);
+        }
+        .gameInfo{
+            margin-left: 20px;
+        }
+        .gameInfo h2{
+            margin-bottom: 8px;
+        }
+        .none{
+            display: none;
+        }
+        #reset{
+            margin-left: 10px;
+            padding: 4px 5px;
+            background-color: rgb(14, 161, 115);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px yellow;
+        }
+        .happy img{
+            width: 100px;
+            height: 100px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            mix-blend-mode: darken;
+        }
+        .excited{
+            display: none;
+        }
+        @media screen and (max-width: 580px){
+            .container{
+                flex-wrap: wrap;
+            }
+            .gamepart{
+                grid-template-columns: repeat(3,20vw);
+                grid-template-rows: repeat(3,20vw);
+            }
+            .gamepart .box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .gameinfo{
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <h3>My TicTacToe.com</h3>
+        </ul>
+    </nav>
+<div class="container">
+    <div class="gamepart">
+        <div class="box bu bl"><span class="boxpart"></span></div>
+        <div class="box bu"><span class="boxpart"></span></div>
+        <div class="box bu br"><span class="boxpart"></span></div>
+        <div class="box bl"><span class="boxpart"></span></div>
+        <div class="box"><span class="boxpart"></span></div>
+        <div class="box br"><span class="boxpart"></span></div>
+        <div class="box bl bd"><span class="boxpart"></span></div>
+        <div class="box bd"><span class="boxpart"></span></div>
+        <div class="box bd br"><span class="boxpart"></span></div>
+    </div>
+    <div class="gameInfo">
+    <h2>Welcome to my TicTacToe</h2>
+    <span class="win none"></span>
+    <button id="reset">RESET</button>
+    </div>
+    <div class="happy">
+    <img class="excited img" src="https://i.pinimg.com/originals/39/d9/d1/39d9d12f7360ee2650b039818da184f0.gif" alt="">
+    </div>
+</div>
+<script src="tictactoe.js"></script>
+</body>
+</html>
